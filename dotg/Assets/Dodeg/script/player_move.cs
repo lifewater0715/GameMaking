@@ -50,6 +50,6 @@ public class player_move : MonoBehaviour
     }
     public void Die()
     {
-        Debug.Log("D짐");
+        gameObject.SetActive(false);
     }
 }
