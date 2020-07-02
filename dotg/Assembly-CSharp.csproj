@@ -64,8 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Dodeg\script\Bullet.cs" />
+    <Compile Include="Assets\Dodeg\script\BulletSpawner.cs" />
+    <Compile Include="Assets\Dodeg\script\BulletSpawner11.cs" />
     <Compile Include="Assets\Dodeg\script\Test.cs" />
-    <Compile Include="Assets\Dodeg\script\camera.cs" />
     <Compile Include="Assets\Dodeg\script\player_move.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/unity/unty_1/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

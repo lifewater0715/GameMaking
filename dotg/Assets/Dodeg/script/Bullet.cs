@@ -16,26 +16,21 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         Rigidbody rigidbody = GetComponent<Rigidbody>();
-        rigidbody.AddForce(Vector3.forward * speed);
+        rigidbody.AddForce(transform.forward * speed);
         timer -= Time.deltaTime;
         if(timer<=0)
         {
-            bullet_die();
+            Destroy(gameObject);
         }
         
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.attachedRigidbody.tag == "Player")
+        if (other.attachedRigidbody != null && other.attachedRigidbody.tag == "Player")
         {
             var player = other.attachedRigidbody.GetComponent<player_move>();
             player.Die();
         }
-    }
-
-    public void bullet_die()
-    {
-        gameObject.SetActive(false);
     }
 }

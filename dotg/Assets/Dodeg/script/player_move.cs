@@ -41,12 +41,12 @@ public class player_move : MonoBehaviour
             Die();
             gameObject.SetActive(false);
         }
-        float fireAxis = Input.GetAxis("Fire1");
+       // float fireAxis = Input.GetAxis("Fire1");
 
-       if(fireAxis>=1)
-        {
-            Die();
-        }
+       //if(fireAxis>=1)
+       // {
+       //     Die();
+       // }
     }
     public void Die()
     {
