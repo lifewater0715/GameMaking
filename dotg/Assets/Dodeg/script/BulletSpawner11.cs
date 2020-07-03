@@ -26,6 +26,9 @@ public class BulletSpawner11 : MonoBehaviour
             bullet.transform.position = transform.position;
             bullet.transform.rotation = transform.rotation;
             Timer = timer;
+            var b = bullet.GetComponent<Bullet>();
+            b.s_speed = transform.forward;
+
         }
         transform.Rotate(0, speed, 0);
     }

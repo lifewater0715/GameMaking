@@ -25,6 +25,9 @@ public class BulletSpawner : MonoBehaviour
             GameObject bullet = GameObject.Instantiate(Bullet);
             bullet.transform.position = transform.position;
             bullet.transform.rotation = transform.rotation;
+            var b =bullet.GetComponent<Bullet>();
+            b.s_speed = transform.forward;
+           
             Timer = timer;
         }
         //GameObject.Find("Player");

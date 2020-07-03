@@ -66,6 +66,8 @@
     <Compile Include="Assets\Dodeg\script\Bullet.cs" />
     <Compile Include="Assets\Dodeg\script\BulletSpawner.cs" />
     <Compile Include="Assets\Dodeg\script\BulletSpawner11.cs" />
+    <Compile Include="Assets\Dodeg\script\Game_system.cs" />
+    <Compile Include="Assets\Dodeg\script\Leval.cs" />
     <Compile Include="Assets\Dodeg\script\Test.cs" />
     <Compile Include="Assets\Dodeg\script\player_move.cs" />
     <Reference Include="UnityEngine">

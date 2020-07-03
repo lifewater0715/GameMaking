@@ -5,24 +5,26 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public Vector3 s_speed;
+    public Vector3 V;
+    public float speed = 15;
+    public float timer = 5;
     void Start()
     {
-        
     }
-    public float speed = 15;
-
-    // Update is called once per frame
-    public float timer = 5;
+    
     void Update()
     {
         Rigidbody rigidbody = GetComponent<Rigidbody>();
-        rigidbody.AddForce(transform.forward * speed);
+        rigidbody.velocity = s_speed * speed;
         timer -= Time.deltaTime;
         if(timer<=0)
         {
             Destroy(gameObject);
         }
-        
+
+        V = rigidbody.velocity;        
     }
 
     private void OnTriggerEnter(Collider other)
