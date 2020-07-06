@@ -42,14 +42,11 @@ public class player_move : MonoBehaviour
             gameObject.SetActive(false);
         }
        // float fireAxis = Input.GetAxis("Fire1");
-
-       //if(fireAxis>=1)
-       // {
-       //     Die();
-       // }
     }
     public void Die()
     {
         gameObject.SetActive(false);
+        //----
+        gameObject.transform.position = new Vector3(0,0,0);
     }
 }
