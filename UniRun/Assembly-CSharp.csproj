@@ -63,8 +63,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\UniRun\Script\Back.cs" />
+    <Compile Include="Assets\UniRun\Script\GameManager.cs" />
     <Compile Include="Assets\UniRun\Script\Player_Move.cs" />
-    <None Include="Assets\Font\License.txt" />
+    <Compile Include="Assets\UniRun\Script\Tile_move.cs" />
+    <None Include="Assets\UniRun\Font\License.txt" />
     <None Include="Assets\Hero_Knight_2\License.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:/unity/unty_1/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

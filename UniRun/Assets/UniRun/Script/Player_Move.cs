@@ -7,6 +7,11 @@ public class Player_Move : MonoBehaviour
     public Animator m_ainmator;
     public Rigidbody2D m_rigidbody2D;
 
+    public AudioSource m_AudioSource;
+
+    public AudioClip a_Jump;
+    public AudioClip a_Die;
+
     public bool is_grownd = true;
     public bool is_die = false;
 
@@ -21,10 +26,14 @@ public class Player_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (is_die) return;
         m_ainmator.SetBool("Is_grownd", is_grownd);
 
         if(Input.GetKeyDown(KeyCode.Space)&&m_jump<2)
         {
+            m_AudioSource.clip = a_Jump;
+            m_AudioSource.Play();
+
             m_rigidbody2D.AddForce(Vector2.up * 400);
             m_jump++;
         }
@@ -41,9 +50,22 @@ public class Player_Move : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.otherCollider.tag == "Grownd")
+        if (collision.collider.tag == "Grownd")
         {
             is_grownd = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Trap")
+        {
+            is_die = true;
+            m_ainmator.SetBool("is_die", is_die);
+            GameManager.Instance.OnPlayerDead();
+
+            m_AudioSource.clip = a_Die;
+            m_AudioSource.Play();
         }
     }
 }
