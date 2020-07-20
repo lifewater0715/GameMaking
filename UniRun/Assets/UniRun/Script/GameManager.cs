@@ -22,6 +22,14 @@ public class GameManager : MonoBehaviour
     {
         m_IsGameover = true;
         m_GameoverUI.SetActive(true);
+
+        Tile_move[] tile_Moves = FindObjectsOfType<Tile_move>();
+        foreach (var tile_move in tile_Moves)
+        {
+            tile_move.enabled = false;
+        }
+
+        FindObjectOfType<Grownd_Maker>().enabled = false;
     }
     public void OnAddScore()
     {
@@ -36,8 +44,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
     }
 }

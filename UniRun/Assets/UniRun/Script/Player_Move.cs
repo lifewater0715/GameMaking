@@ -29,14 +29,19 @@ public class Player_Move : MonoBehaviour
         if (is_die) return;
         m_ainmator.SetBool("Is_grownd", is_grownd);
 
-        if(Input.GetKeyDown(KeyCode.Space)&&m_jump<2)
+        if (Input.GetKeyDown(KeyCode.Space) && m_jump < 2)
         {
-            m_AudioSource.clip = a_Jump;
-            m_AudioSource.Play();
-
-            m_rigidbody2D.AddForce(Vector2.up * 400);
-            m_jump++;
+            Jump();
         }
+    }
+
+    public void Jump()
+    {
+        m_AudioSource.clip = a_Jump;
+        m_AudioSource.Play();
+
+        m_rigidbody2D.AddForce(Vector2.up * 400);
+        m_jump++;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
