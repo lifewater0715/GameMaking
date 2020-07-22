@@ -48,10 +48,18 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     void Shoot()
     {
         Debug.Log("발사");
         GameObject bullet = GameObject.Instantiate(Mis);
         bullet.transform.position = m_MisPoint.position;
-    }
+    }   
 }

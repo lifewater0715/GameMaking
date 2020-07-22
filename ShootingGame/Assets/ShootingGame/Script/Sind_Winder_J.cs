@@ -21,6 +21,14 @@ public class Sind_Winder_J : MonoBehaviour
             Destroy(gameObject);
         }
 
-        transform.position += Vector3.up * Time.deltaTime * Mis_Speed;
+        transform.position += transform.up * Time.deltaTime * Mis_Speed;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
     }
 }
