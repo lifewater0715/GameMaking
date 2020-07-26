@@ -8,6 +8,10 @@ public class PlayerControl : MonoBehaviour
     public float FierTimer;
     public float fierTimer;
 
+    public bool is_die = false;
+
+    public Animator m_ainmator;
+
     public Transform m_MisPoint;
 
     public GameObject Mis;
@@ -48,11 +52,17 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    public void DestroySelf()
+    {
+        gameObject.SetActive(false);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
         {
-            gameObject.SetActive(false);
+            is_die = true;
+            m_ainmator.SetBool("Die", is_die);
         }
     }
 
