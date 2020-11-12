@@ -16,7 +16,6 @@ public class LaserController : MonoBehaviour
     {
         if (Input.GetKeyDown("1") && Laser1==false) Laser1work = true;
         else if (Input.GetKeyDown("1") && Laser1 == true) Laser1work = false;
-
         if (Laser1work==true)
         {
             timer1 = Timer1;
