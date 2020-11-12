@@ -16,19 +16,19 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A)) //좌
         {
-            transform.position += Vector3.left * PlayerSpeed * Time.smoothDeltaTime;
+            transform.position += Vector3.left * PlayerSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.D)) //우
         {
-            transform.position += Vector3.right * PlayerSpeed * Time.smoothDeltaTime;
+            transform.position += Vector3.right * PlayerSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.W)) //상
         {
-            transform.position += Vector3.up * PlayerSpeed * Time.smoothDeltaTime;
+            transform.position += Vector3.up * PlayerSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.S)) //하
         {
-            transform.position += Vector3.down * PlayerSpeed * Time.smoothDeltaTime;
+            transform.position += Vector3.down * PlayerSpeed * Time.deltaTime;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
