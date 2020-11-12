@@ -4,32 +4,27 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public JoyStick joyStick;
     public float PlayerSpeed;
-    // Start is called before the first frame update
+
+    private Vector3 MoveVecter;
+    private Transform PlayerTransfrom;
     void Start()
     {
-        
+        PlayerTransfrom = transform;
+        MoveVecter = Vector3.zero;
     }
-
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.A)) //좌
-        {
-            transform.position += Vector3.left * PlayerSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.D)) //우
-        {
-            transform.position += Vector3.right * PlayerSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.W)) //상
-        {
-            transform.position += Vector3.up * PlayerSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.S)) //하
-        {
-            transform.position += Vector3.down * PlayerSpeed * Time.deltaTime;
-        }
+        MoveVecter = GetJoystick();
+        PlayerTransfrom.Translate(MoveVecter * PlayerSpeed * Time.deltaTime);
+    }
+    public Vector3 GetJoystick()
+    {
+        float X = joyStick.GetKoystickX();
+        float Y = joyStick.GetKoystickY();
+        MoveVecter = new Vector3(X, Y, 0);
+        return MoveVecter;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
