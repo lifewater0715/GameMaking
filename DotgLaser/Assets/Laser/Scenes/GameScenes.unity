@@ -372,8 +372,11 @@ MonoBehaviour:
   DieParticle: {fileID: 1061235197}
   MoveParticle: {fileID: 913417902}
   PlayerRanderer: {fileID: 1387908951}
+  PlayerRigidbody: {fileID: 397831627}
   PlayerSpeed: 5
   is_die: 0
+  is_dash: 0
+  Timer1: 0.3
 --- !u!50 &397831627
 Rigidbody2D:
   serializedVersion: 4
