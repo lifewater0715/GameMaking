@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Laser/Scenes/GameScenes.unity
+    guid: e732fa50e5338224b8da62514d1171aa
   m_configObjects: {}
